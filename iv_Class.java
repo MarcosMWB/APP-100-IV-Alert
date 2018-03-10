@@ -1,11 +1,9 @@
 package sample;
 
-import java.util.List;
 import kotlin.Metadata;
 import kotlin.TypeCastException;
 import kotlin.io.ConsoleKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
 import org.jetbrains.annotations.NotNull;
 
 import static kotlin.text.StringsKt.*;
