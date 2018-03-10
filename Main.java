@@ -10,8 +10,9 @@ import kotlin.TypeCastException;
 import kotlin.jvm.internal.Intrinsics;
 import org.jetbrains.annotations.NotNull;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
-import java.awt.*;
+//import java.awt.*;
 
 import static kotlin.text.StringsKt.*;
 
@@ -48,9 +49,9 @@ final class iv_Class {
 
     public void main(@NotNull String[] args) {
         Intrinsics.checkParameterIsNotNull(args, "args");
-        double atk;
-        double def;
-        double hp;
+        double atk = 0.0D;
+        double def = 0.0D;
+        double hp = 0.0D;
         int lvl;
         double cp;
         double iva;
@@ -75,11 +76,10 @@ final class iv_Class {
             pkm = capitalize(pkm);
 
             int CP;
-            do {
-                var10000 = cp_Pkm.getText();
-                if (var10000 == null) {
-                    Intrinsics.throwNpe();
-                }
+            var10000 = cp_Pkm.getText();
+            if (var10000 == null) {
+                Intrinsics.throwNpe();
+            }
 
                 String var22 = var10000;
                 CP = Integer.parseInt(var22);
@@ -1079,11 +1079,7 @@ final class iv_Class {
                     atk = 263.0D;
                     def = 301.0D;
                     hp = 212.0D;
-                } else {
-                    if (!Intrinsics.areEqual(pkm, "Celebi")) {
-                        break;
-                    }
-
+                } else if (!Intrinsics.areEqual(pkm, "Celebi")) {
                     atk = 210.0D;
                     def = 210.0D;
                     hp = 200.0D;
@@ -1111,9 +1107,8 @@ final class iv_Class {
 
                 var22 = "Your " + pkm + " can be " + (int)percent + "% at level " + l + " CP:" + CP + "\n";
                 show_Iv.setText(var22);
-            } while(CP != 0);
-
         }
+
     }
 
     private static double cpformula(double atk, double def, double hp, double cpm) {

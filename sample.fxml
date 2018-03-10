@@ -31,10 +31,8 @@
       <RowConstraints />
       <RowConstraints />
    </rowConstraints>
-   <children>
-      <Button fx:id="btn_Guess" mnemonicParsing="false" text="Guess IV" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-      <TextField fx:id="cp_Pkm" text="CP HERE" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <TextField fx:id="name_Pkm" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="btn_Guess" mnemonicParsing="false" onAction="#pressButton" text="Guess IV" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <TextField fx:id="cp_Pkm" promptText="CP" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextField fx:id="name_Pkm" promptText="Pokémon" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <TextField fx:id="show_Iv" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-   </children>
 </GridPane>
