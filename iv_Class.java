@@ -1071,7 +1071,7 @@ public final class iv_Class {
                     for(ivd = 0.0D; ivd <= (double)15; ++ivd) {
                         for(ivh = 0.0D; ivh <= (double)15; ++ivh) {
                             for(lvl = 1; lvl < 40; ++lvl) {
-                                cp = cpformula(atk + iva, def + ivd, hp + ivh, cpm[lvl - 1]);
+                                cp = cp_Formula(atk + iva, def + ivd, hp + ivh, cpm[lvl - 1]);
                                 if (cp < (double)10) {
                                     cp = 10.0D;
                                 }
@@ -1092,7 +1092,7 @@ public final class iv_Class {
         }
     }
 
-    public static final double cpformula(double atk, double def, double hp, double cpm) {
+    public static final double cp_Formula(double atk, double def, double hp, double cpm) {
         return atk * Math.pow(def, 0.5D) * Math.pow(hp, 0.5D) * Math.pow(cpm, 2.0D) / (double)10;
     }
 }
