@@ -8,11 +8,9 @@ import javafx.stage.Stage;
 import kotlin.Metadata;
 import kotlin.TypeCastException;
 import kotlin.jvm.internal.Intrinsics;
-import org.jetbrains.annotations.NotNull;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-
-//import java.awt.*;
+import javafx.event.ActionEvent;
 
 import static kotlin.text.StringsKt.*;
 
@@ -47,8 +45,7 @@ final class iv_Class {
     private TextField nome_Pkm;
     private TextField show_Iv;
 
-    public void main(@NotNull String[] args) {
-        Intrinsics.checkParameterIsNotNull(args, "args");
+    public void iv(ActionEvent event) {
         double atk = 0.0D;
         double def = 0.0D;
         double hp = 0.0D;
