@@ -16,17 +16,17 @@ import static kotlin.text.StringsKt.*;
         d2 = {"cpformula", "", "atk", "def", "hp", "cpm", "main", "", "args", "", "", "([Ljava/lang/String;)V", "production sources for module APP 100 IV Alert"}
 )
 public final class iv_Class {
-    public static final void main(@NotNull String[] args) {
+    public static void main(@NotNull String[] args) {
         Intrinsics.checkParameterIsNotNull(args, "args");
-        double atk = 0.0D;
-        double def = 0.0D;
-        double hp = 0.0D;
-        int lvl = 1;
-        double cp = 0.0D;
-        double iva = 0.0D;
-        double ivd = 0.0D;
-        double ivh = 0.0D;
-        double percent = 0.0D;
+        double atk;
+        double def;
+        double hp;
+        int lvl;
+        double cp;
+        double iva;
+        double ivd;
+        double ivh;
+        double percent;
         int l = 0;
         Double[] cpm = new Double[]{0.094D, 0.16639787D, 0.21573247D, 0.25572005D, 0.29024988D, 0.3210876D, 0.34921268D, 0.37523559D, 0.39956728D, 0.42250001D, 0.44310755D, 0.46279839D, 0.48168495D, 0.49985844D, 0.51739395D, 0.53435433D, 0.55079269D, 0.56675452D, 0.58227891D, 0.59740001D, 0.61215729D, 0.62656713D, 0.64065295D, 0.65443563D, 0.667934D, 0.68116492D, 0.69414365D, 0.70688421D, 0.71939909D, 0.7317D, 0.73776948D, 0.74378943D, 0.74976104D, 0.75568551D, 0.76156384D, 0.76739717D, 0.7731865D, 0.77893275D, 0.78463697D};
         System.out.print("nome do pokemon:");
@@ -93,7 +93,7 @@ public final class iv_Class {
                     atk = 171.0D;
                     def = 210.0D;
                     hp = 158.0D;
-                } else if (Intrinsics.areEqual(pkm, "caterpie")) {
+                } else if (Intrinsics.areEqual(pkm, "Caterpie")) {
                     atk = 55.0D;
                     def = 62.0D;
                     hp = 90.0D;
@@ -1064,14 +1064,12 @@ public final class iv_Class {
                 }
 
                 iva = 0.0D;
-                ivd = 0.0D;
-                ivh = 0.0D;
 
                 for(percent = 0.0D; iva <= (double)15; ++iva) {
                     for(ivd = 0.0D; ivd <= (double)15; ++ivd) {
                         for(ivh = 0.0D; ivh <= (double)15; ++ivh) {
                             for(lvl = 1; lvl < 40; ++lvl) {
-                                cp = cp_Formula(atk + iva, def + ivd, hp + ivh, cpm[lvl - 1]);
+                                cp = cpformula(atk + iva, def + ivd, hp + ivh, cpm[lvl - 1]);
                                 if (cp < (double)10) {
                                     cp = 10.0D;
                                 }
@@ -1092,7 +1090,7 @@ public final class iv_Class {
         }
     }
 
-    public static final double cp_Formula(double atk, double def, double hp, double cpm) {
+    private static double cpformula(double atk, double def, double hp, double cpm) {
         return atk * Math.pow(def, 0.5D) * Math.pow(hp, 0.5D) * Math.pow(cpm, 2.0D) / (double)10;
     }
 }
